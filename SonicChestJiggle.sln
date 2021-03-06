@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SonicChestJiggle", "SonicChestJiggle\SonicChestJiggle.vcxproj", "{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Debug|x64.ActiveCfg = Debug|x64
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Debug|x64.Build.0 = Debug|x64
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Debug|x86.ActiveCfg = Debug|Win32
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Debug|x86.Build.0 = Debug|Win32
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Release|x64.ActiveCfg = Release|x64
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Release|x64.Build.0 = Release|x64
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Release|x86.ActiveCfg = Release|Win32
+		{A5DBAAD3-FA0C-4C4B-95E8-DDE105057D3A}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB06C1D5-0CBB-4ECB-B219-B5AFD6CF1A0A}
+	EndGlobalSection
+EndGlobal
