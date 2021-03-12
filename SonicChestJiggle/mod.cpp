@@ -117,6 +117,52 @@ void SuperDisplayHook(ObjectMaster* obj)
 	}
 }
 
+void SuperLoadHook()
+{
+	if (jiggledata[0])
+	{
+		if (jiggledata[0]->TorsoJiggle)
+		{
+			FreeJiggle(jiggledata[0]->TorsoJiggle);
+			jiggledata[0]->TorsoJiggle = nullptr;
+		}
+		if (jiggledata[0]->TorsoJiggle2)
+		{
+			FreeJiggle(jiggledata[0]->TorsoJiggle2);
+			jiggledata[0]->TorsoJiggle2 = nullptr;
+		}
+		delete jiggledata[0];
+		jiggledata[0] = nullptr;
+	}
+	LoadSuperSonic();
+	jiggledata[0] = new JiggleData();
+	jiggledata[0]->TorsoJiggle2 = InitJiggle(CharacterModels[2].Model->child->child);
+	jiggledata[0]->TorsoJiggle2->type = 14;
+	jiggledata[0]->TorsoJiggle2->speed = 0.40000001f;
+	jiggledata[0]->TorsoJiggle2->field_8 = 12288;
+	jiggledata[0]->TorsoJiggle2->field_10 = 1024;
+	jiggledata[0]->TorsoJiggle2->Model = CharacterModels[2].Model->child->child;
+	jiggledata[0]->TorsoJiggle = InitJiggle(CharacterModels[2].Model->child);
+	jiggledata[0]->TorsoJiggle->type = 13;
+	jiggledata[0]->TorsoJiggle->speed = 0.40000001f;
+	jiggledata[0]->TorsoJiggle->field_8 = 12288;
+	jiggledata[0]->TorsoJiggle->field_10 = 1024;
+	jiggledata[0]->TorsoJiggle->Model = CharacterModels[2].Model->child;
+	jiggledata[0]->SuperTorsoJiggle2 = InitJiggle(CharacterModels[330].Model->child->child);
+	jiggledata[0]->SuperTorsoJiggle2->type = 14;
+	jiggledata[0]->SuperTorsoJiggle2->speed = 0.40000001f;
+	jiggledata[0]->SuperTorsoJiggle2->field_8 = 12288;
+	jiggledata[0]->SuperTorsoJiggle2->field_10 = 1024;
+	jiggledata[0]->SuperTorsoJiggle2->Model = CharacterModels[330].Model->child->child;
+	jiggledata[0]->SuperTorsoJiggle = InitJiggle(CharacterModels[330].Model->child);
+	jiggledata[0]->SuperTorsoJiggle->type = 13;
+	jiggledata[0]->SuperTorsoJiggle->speed = 0.40000001f;
+	jiggledata[0]->SuperTorsoJiggle->field_8 = 12288;
+	jiggledata[0]->SuperTorsoJiggle->field_10 = 1024;
+	jiggledata[0]->SuperTorsoJiggle->Model = CharacterModels[330].Model->child;
+	jiggledata[0]->TorsoJigglePos = MainCharObj1[0]->Position;
+}
+
 extern "C"
 {
 	__declspec(dllexport) void OnFrame()
@@ -139,7 +185,6 @@ extern "C"
 					jiggledata[i]->TorsoJiggle->field_8 = 12288;
 					jiggledata[i]->TorsoJiggle->field_10 = 1024;
 					jiggledata[i]->TorsoJiggle->Model = CharacterModels[2].Model->child;
-					jiggledata[i]->TorsoJigglePos = MainCharObj1[i]->Position;
 					if (MainCharObj2[i]->CharID2 == Characters_SuperSonic)
 					{
 						jiggledata[i]->SuperTorsoJiggle2 = InitJiggle(CharacterModels[330].Model->child->child);
@@ -155,6 +200,7 @@ extern "C"
 						jiggledata[i]->SuperTorsoJiggle->field_10 = 1024;
 						jiggledata[i]->SuperTorsoJiggle->Model = CharacterModels[330].Model->child;
 					}
+					jiggledata[i]->TorsoJigglePos = MainCharObj1[i]->Position;
 				}
 				float v46 = jiggledata[i]->TorsoNodePos.y;
 				float v47 = jiggledata[i]->TorsoNodePos.z;
@@ -222,6 +268,16 @@ extern "C"
 					FreeJiggle(jiggledata[i]->TorsoJiggle2);
 					jiggledata[i]->TorsoJiggle2 = nullptr;
 				}
+				if (jiggledata[i]->SuperTorsoJiggle)
+				{
+					FreeJiggle(jiggledata[i]->SuperTorsoJiggle);
+					jiggledata[i]->SuperTorsoJiggle = nullptr;
+				}
+				if (jiggledata[i]->SuperTorsoJiggle2)
+				{
+					FreeJiggle(jiggledata[i]->SuperTorsoJiggle2);
+					jiggledata[i]->SuperTorsoJiggle2 = nullptr;
+				}
 				delete jiggledata[i];
 				jiggledata[i] = nullptr;
 			}
@@ -234,6 +290,8 @@ extern "C"
 
 		WriteData((void (**)(ObjectMaster*))0x71706F, SonicDisplayHook);
 		WriteData((void (**)(ObjectMaster*))0x49AB4F, SuperDisplayHook);
+
+		WriteCall((void*)0x498A98, SuperLoadHook);
 	}
 
 	__declspec(dllexport) ModInfo SA2ModInfo = { ModLoaderVer };
