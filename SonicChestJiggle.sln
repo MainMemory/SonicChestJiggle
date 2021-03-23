@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SonicChestJiggle", "SonicCh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AmyChestJiggle", "AmyChestJiggle\AmyChestJiggle.vcxproj", "{3C401396-BACD-46C1-A38E-B405ED06CB7E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShadowChestJiggle", "ShadowChestJiggle\ShadowChestJiggle.vcxproj", "{296A7801-4D00-4A91-9C8F-3B6965349E10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,6 +31,14 @@ Global
 		{3C401396-BACD-46C1-A38E-B405ED06CB7E}.Release|x64.Build.0 = Release|x64
 		{3C401396-BACD-46C1-A38E-B405ED06CB7E}.Release|x86.ActiveCfg = Release|Win32
 		{3C401396-BACD-46C1-A38E-B405ED06CB7E}.Release|x86.Build.0 = Release|Win32
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Debug|x64.ActiveCfg = Debug|x64
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Debug|x64.Build.0 = Debug|x64
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Debug|x86.ActiveCfg = Debug|Win32
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Debug|x86.Build.0 = Debug|Win32
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Release|x64.ActiveCfg = Release|x64
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Release|x64.Build.0 = Release|x64
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Release|x86.ActiveCfg = Release|Win32
+		{296A7801-4D00-4A91-9C8F-3B6965349E10}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
