@@ -167,6 +167,7 @@ extern "C"
 {
 	__declspec(dllexport) void OnFrame()
 	{
+		if (GameState == GameStates_Pause) return;
 		for (int i = 0; i < 2; i++)
 			if (MainCharObj2[i] && (MainCharObj2[i]->CharID2 == Characters_Sonic || MainCharObj2[i]->CharID2 == Characters_SuperSonic))
 			{
